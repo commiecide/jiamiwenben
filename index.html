@@ -1389,11 +1389,12 @@
 <body onload="nowLoaded();">
     <div class="container">
         <h1>文本加密与解密</h1>
+        <p>为了更快捷使用本站服务，以及防止被墙，请将本站保存到本地(Mac: cmd + S; Win: ctrl + S)。将保存后的html 文件拖到浏览器即可打开。</p>
         <hr style="background-color: rgb(192, 192, 192); color: #000000;" />
-        <form name="key" action="#" onsubmit="return false;">
-            <div class="buildingBlocks">
+        <div class="buildingBlocks">
+            <form name="key" action="#" onsubmit="return false;">
+            
                 <h3>密钥</h3>
-                <div>
                     <input type="text" value=" FUCK_CCP " name="text" maxlength="1024" style="background-color: rgb(255, 255, 200); color: #000000;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();" />
                     <div class="selectArea">
                         <em>密钥格式：</em>
@@ -1406,7 +1407,7 @@
                         <input type="button" class="btn" value=" 清除 " onclick="document.key.text.value='';" />
                         <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.key.text.select();document.execCommand('copy');" />
                     </div>
-                </div>
+                <!-- </div> -->
         </form>
         </div>
         <div class="buildingBlocks">
