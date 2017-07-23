@@ -1363,6 +1363,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         var onIos = iOS();
         if (onIos) {
+            alert('on iOS!');
             document.getElementsByClassName('copyButton').innerHTML = "选择文本";
         }
         document.getElementById('encryptButton').click();
