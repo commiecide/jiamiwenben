@@ -25,6 +25,18 @@
         margin: 20px;
     }
 
+    .buildingBlocks {
+        margin-top: 40px;
+    }
+
+    .buttonArea {
+        margin: 20px auto;
+    }
+
+    .selectArea {
+        margin-top: 10px;
+    }
+
     .btn {
         background: #3498db;
         background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -37,7 +49,7 @@
         border-radius: 14px;
         color: #ffffff;
         font-size: 16px;
-        padding: 5px 10px 5px 10px;
+        padding: 5px;
         text-decoration: none;
     }
 
@@ -1379,45 +1391,57 @@
         <h1>文本加密与解密</h1>
         <hr style="background-color: rgb(192, 192, 192); color: #000000;" />
         <form name="key" action="#" onsubmit="return false;">
-            <h3>密钥</h3>
-            <p align="center">
-                <input type="text" value=" FUCK_CCP " name="text" maxlength="1024" style="background-color: rgb(255, 255, 200); color: #000000;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();" />
-                <br/> <b>密钥格式：</b>&nbsp;
-                <input type="radio" checked="checked" name="keytype" />&nbsp;纯文本 &nbsp;
-                <input type="radio" name="keytype" />&nbsp;十六进制字符 &nbsp;
-                <br/>
-                <br/>
-                <input type="button" class="btn" value=" 生成密钥 " onclick="Generate_key();" /> &nbsp;
-                <input type="button" class="btn" value=" 清除 " onclick="document.key.text.value='';" /> &nbsp;
-                <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.key.text.select();document.execCommand('copy');" /> </p>
+            <div class="buildingBlocks">
+                <h3>密钥</h3>
+                <div>
+                    <input type="text" value=" FUCK_CCP " name="text" maxlength="1024" style="background-color: rgb(255, 255, 200); color: #000000;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();" />
+                    <div class="selectArea">
+                        <em>密钥格式：</em>
+                        <br>
+                        <input type="radio" checked="checked" name="keytype" />&nbsp;纯文本
+                        <input type="radio" name="keytype" />&nbsp;十六进制字符
+                    </div>
+                    <div class="buttonArea">
+                        <input type="button" class="btn" value=" 生成密钥 " onclick="Generate_key();" />
+                        <input type="button" class="btn" value=" 清除 " onclick="document.key.text.value='';" />
+                        <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.key.text.select();document.execCommand('copy');" />
+                    </div>
+                </div>
         </form>
-        <br/>
-        <form name="plain" action="#" onsubmit="return false;">
-            <h3>纯文本</h3>
-            <p align="center">
-                <textarea name="text" rows="16" cols="80" style="background-color: rgb(200, 255, 200); color: #000000;max-width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();">习近平傻逼</textarea>
-                <br/> <b>加密算法：</b>&nbsp;
-                <input type="radio" checked="checked" name="encoding" />&nbsp;Codegroup &nbsp;
-                <input type="radio" name="encoding" />&nbsp;Hexadecimal &nbsp;
-                <input type="radio" name="encoding" />&nbsp;Base&nbsp;64
-                <br/>
-                <br/>
-                <input type="button" class="btn" name="encrypt" value=" 加密 " id="encryptButton" onclick="Encrypt_text();" /> &nbsp;
-                <input type="button" class="btn" value=" 清除 " onclick="document.plain.text.value='';" /> &nbsp;
-                <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.plain.text.select();document.execCommand('copy');" />
-                <br/> </p>
-        </form>
-        <br/>
-        <form name="cipher" action="#" onsubmit="return false;">
-            <h3>密文</h3>
-            <p align="center">
-                <textarea name="text" rows="16" cols="80" style="background-color: rgb(255, 200, 200); color: #000000;max-width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();"></textarea>
-                <br/>
-                <br/>
-                <input type="button" class="btn" name="decrypt" value=" 解密 " onclick="Decrypt_text();" /> &nbsp;
-                <input type="button" class="btn" value=" 清除 " onclick="document.cipher.text.value='';" /> &nbsp;
-                <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.cipher.text.select();document.execCommand('copy');" /> </p>
-        </form>
+        </div>
+        <div class="buildingBlocks">
+            <form name="plain" action="#" onsubmit="return false;">
+                <h3>纯文本</h3>
+                <div>
+                    <textarea name="text" rows="16" cols="80" style="background-color: rgb(200, 255, 200); color: #000000;max-width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();">习近平傻逼</textarea>
+                    <div class="selectArea">
+                        <em>加密算法：</em>
+                        <br>
+                        <input type="radio" checked="checked" name="encoding" />&nbsp;Codegroup
+                        <input type="radio" name="encoding" />&nbsp;Hexadecimal
+                        <input type="radio" name="encoding" />&nbsp;Base&nbsp;64
+                    </div>
+                    <div class="buttonArea">
+                        <input type="button" class="btn" name="encrypt" value=" 加密 " id="encryptButton" onclick="Encrypt_text();" />
+                        <input type="button" class="btn" value=" 清除 " onclick="document.plain.text.value='';" />
+                        <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.plain.text.select();document.execCommand('copy');" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="buildingBlocks">
+            <form name="cipher" action="#" onsubmit="return false;">
+                <h3>密文</h3>
+                <div>
+                    <textarea name="text" rows="16" cols="80" style="background-color: rgb(255, 200, 200); color: #000000;max-width: 100%;" onfocus="ce();" onblur="ce();" onkeydown="ce();"></textarea>
+                    <div class="buttonArea">
+                        <input type="button" class="btn" name="decrypt" value=" 解密 " onclick="Decrypt_text();" />
+                        <input type="button" class="btn" value=" 清除 " onclick="document.cipher.text.value='';" />
+                        <input type="button" class="btn copyButton" value=" 复制文本 " onclick="document.cipher.text.select();document.execCommand('copy');" />
+                    </div>
+                </div>
+            </form>
+        </div>
         <hr/>
         <footer> 放心在微信上破坏社会主义精神文明吧，哈哈哈！ </footer>
     </div>
